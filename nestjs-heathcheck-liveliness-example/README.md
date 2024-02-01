@@ -1,73 +1,51 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# NestJS Healthcheck Liveliness Example
+This project is an example of how to implement health checks in a NestJS application. It includes checks for various types of services such as gRPC, HTTP, memory, microservices, Mongoose, TypeORM, and Sequelize.
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+## Health Checks
+Health checks are implemented using the @nestjs/terminus package. Each service has its own health indicator which can be checked individually or as part of a group.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+### gRPC Service
+The gRPC service health check verifies the availability of a gRPC server. If the server is not reachable, the health check will fail.
 
-## Description
+### HTTP Service
+The HTTP service health check verifies the availability of an HTTP server. If the server is not reachable, the health check will fail.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+### Memory
+The memory health check verifies that the application has enough free memory. If the free memory falls below a certain threshold, the health check will fail.
 
-## Installation
+### Microservice
+The microservice health check verifies the availability of a microservice. If the microservice is not reachable, the health check will fail.
 
-```bash
-$ npm install
+### Mongoose
+The Mongoose health check verifies the connection to a MongoDB database using Mongoose. If the connection fails, the health check will fail.
+
+### TypeORM
+The TypeORM health check verifies the connection to a database using TypeORM. If the connection fails, the health check will fail.
+
+### Sequelize
+The Sequelize health check verifies the connection to a database using Sequelize. If the connection fails, the health check will fail.
+
+Running the Health Checks
+To run the health checks, start the application:
+
+1. Clone the repository
+2. Build images with command: `docker-compose build`
+3. Run the application with `docker-compose up -d`
+
+Following endpoints has different implementation for health check
+```
+curl http://localhost:3000/custom-health-indicator
+curl http://localhost:3000/grpc-health-indicator
+curl http://localhost:3000/http-health-indicator
+curl http://localhost:3000/memory-health-indicator
+curl http://localhost:3000/microservice-health-indicator
+curl http://localhost:3000/mongoose-health-indicator
+curl http://localhost:3000/sequelize-health-indicator
+curl http://localhost:3000/typeorm-health-indicator
 ```
 
-## Running the app
+##### Contributing
+Contributions are welcome. Please make sure to update tests as appropriate.
 
-```bash
-# development
-$ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
-```
-
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+License
+[MIT](https://choosealicense.com/licenses/mit/)
