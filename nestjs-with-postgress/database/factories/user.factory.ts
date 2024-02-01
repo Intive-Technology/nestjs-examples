@@ -1,6 +1,6 @@
 import { setSeederFactory } from 'typeorm-extension';
-import { User } from '../../apps/main-app/src/user/entities/user.entity';
-import { cryptoHelper } from '../../apps/main-app/src/utils/crypto';
+import { User } from '../../src/user/entities/user.entity';
+import { cryptoHelper } from '../../src/utils/crypto';
 
 export default setSeederFactory(User, async (faker) => {
   const salt = cryptoHelper.generateSalt();

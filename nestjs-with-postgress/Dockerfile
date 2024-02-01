@@ -10,12 +10,13 @@ RUN npm install -g @nestjs/cli
 WORKDIR /usr/src/
 
 COPY package.json package-lock.json ./
+
+RUN npm install --include=dev
+
 COPY ./src ./src
 COPY ./nest-cli.json ./
 COPY ./tsconfig.build.json ./
 COPY ./tsconfig.json ./
-
-RUN npm install --include=dev
 
 RUN npm run build
 
