@@ -1,0 +1,25 @@
+version: '3.9'
+
+services:
+  main-app:
+    container_name: main-app
+    image: nest-graceful-shutdown:1.0
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      target: development
+    ports:
+      - '3000:3000'
+      - '9229:9229'
+    networks:
+      - app-network
+    volumes:
+      - .:/usr/src/
+    restart: unless-stopped
+    
+networks:
+  app-network:
+
+volumes:
+  postgres-data:
+  
