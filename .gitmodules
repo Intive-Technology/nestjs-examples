@@ -13,3 +13,9 @@
 [submodule "nestjs-graceful-shutdown-example"]
 	path = nestjs-graceful-shutdown-example
 	url = git@github.com:Intive-Technology/nestjs-graceful-shutdown-example.git
+[submodule "nestjs-logger"]
+	path = nestjs-logger
+	url = git@github.com:Intive-Technology/nestjs-logger.git
+[submodule "nestjs-profiling-with-clinicjs"]
+	path = nestjs-profiling-with-clinicjs
+	url = git@github.com:Intive-Technology/nestjs-profiling-with-clinicjs.git
