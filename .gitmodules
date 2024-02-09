@@ -10,3 +10,6 @@
 [submodule "nestjs-skywalking"]
 	path = nestjs-skywalking
 	url = git@github.com:Intive-Technology/nestjs-skywalking.git
+[submodule "nestjs-graceful-shutdown-example"]
+	path = nestjs-graceful-shutdown-example
+	url = git@github.com:Intive-Technology/nestjs-graceful-shutdown-example.git
