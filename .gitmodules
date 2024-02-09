@@ -4,3 +4,6 @@
 [submodule "nestjs-api-versioning"]
 	path = nestjs-api-versioning
 	url = git@github.com:Intive-Technology/nestjs-api-versioning.git
+[submodule "nestjs-grpc-example"]
+	path = nestjs-grpc-example
+	url = git@github.com:Intive-Technology/nestjs-grpc-example.git
