@@ -19,3 +19,6 @@
 [submodule "nestjs-profiling-with-clinicjs"]
 	path = nestjs-profiling-with-clinicjs
 	url = git@github.com:Intive-Technology/nestjs-profiling-with-clinicjs.git
+[submodule "nestjs-with-postgress"]
+	path = nestjs-with-postgress
+	url = git@github.com:Intive-Technology/nestjs-with-postgress.git
