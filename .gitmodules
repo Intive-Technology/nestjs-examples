@@ -1,3 +1,6 @@
 [submodule "nestjs-caching-example"]
 	path = nestjs-caching-example
 	url = git@github.com:Intive-Technology/nestjs-caching-example.git
+[submodule "nestjs-api-versioning"]
+	path = nestjs-api-versioning
+	url = git@github.com:Intive-Technology/nestjs-api-versioning.git
