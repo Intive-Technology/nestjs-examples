@@ -7,3 +7,6 @@
 [submodule "nestjs-grpc-example"]
 	path = nestjs-grpc-example
 	url = git@github.com:Intive-Technology/nestjs-grpc-example.git
+[submodule "nestjs-skywalking"]
+	path = nestjs-skywalking
+	url = git@github.com:Intive-Technology/nestjs-skywalking.git
